@@ -211,6 +211,13 @@ header.header {
   }
 }
 div.contents.row {
+  div.wrapper{
+    display: flex;/*画像横並びにする*/
+    flex-wrap: wrap; /*折返し有り*/
+    margin-left: -150px;
+    margin-right: -150px;/*左右の空白が大きかったので　スマホだったら0がいいのかも*/
+    }
+  
   h2 {
     @include boxBase(20px 0, 0);
     font-weight: normal;
@@ -224,14 +231,14 @@ div.contents.row {
   font-family: "游ゴシック", "YuGothic";
   }
   div.content_post {
-    @include boxBase(20px 0 ,30px);
+    @include boxBase(10px 10px ,150px);/*(縦の余白，横の余白，横の幅)*/
     position: relative;
-    height: 400px;
+    height: 150px;/*画像の高さ*/
     color: #fff;
     background-size: cover;
     background-position: center center;
     border-radius: 3px;
-    box-shadow: 0 0 10px rgba($black,0.2);
+    box-shadow: 0 0 5px rgba($black,0.2);
     &:after {
       content: '';
       position: absolute;
@@ -240,7 +247,7 @@ div.contents.row {
       left: 0;
       right: 0;
       @include filter-gradient(#000000, #a60000, vertical);
-      @include background-image(linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 62%,rgba(0,0,0,0.85) 100%));
+      /*@include background-image(linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 62%,rgba(0,0,0,0.85) 100%));*//*画像全体にかかってた影を外す*/
       z-index: 1;
       border-radius: 3px;
     }
