@@ -1,0 +1,2 @@
+class Codinate < ApplicationRecord
+end
