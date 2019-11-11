@@ -1,7 +1,7 @@
 class ClothesController < ApplicationController
 
   def index
-    @codinates = Codinate.all
+    @tops = Top.all
   end
   
 end
