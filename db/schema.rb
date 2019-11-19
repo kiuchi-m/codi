@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_06_104709) do
+ActiveRecord::Schema.define(version: 2019_11_19_073535) do
 
   create_table "bottoms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "image"
@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 2019_11_06_104709) do
   end
 
   create_table "codinates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "tops_id"
-    t.integer "bottoms_id"
+    t.integer "top_id"
+    t.integer "bottom_id"
     t.integer "stetus"
-    t.integer "users_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
