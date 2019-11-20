@@ -1,8 +1,10 @@
 <div class="contents row" >
   <div class="wrapper">
     <% @codinates.each do |codinate| %>
-      <div class="content_post" style="background-image: url(<%= codinate.top.image %>);"></div>
-      <div class="content_post" style="background-image: url(<%= codinate.bottom.image %>);" /></div>
+      <div class="set">
+        <div class="content" style="background-image: url(<%= codinate.top.image %>);"></div>
+        <div class="content" style="background-image: url(<%= codinate.bottom.image %>);" /></div>
+      </div>
     <% end %>
   </div>
 </div>
