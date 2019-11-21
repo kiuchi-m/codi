@@ -143,6 +143,7 @@ header.header {
       a.post {
         @extend .btn;
         width: 120px;
+        border-radius: 15px;/*ボタンの角を丸く*/
         display: inline-left;
         margin-left: 10px;
       }
@@ -255,7 +256,7 @@ div.contents.row {
   font-family: "游ゴシック", "YuGothic";
   }
   div.content_post {
-    @include boxBase(10px 10px ,150px);/*(縦の余白，横の余白，横の幅)*/
+    @include boxBase(10px 10px ,150px);/*(縦の余白，横の余��，横の幅)*/
     position: relative;
     height: 150px;/*画像の高さ*/
     color: #fff;
