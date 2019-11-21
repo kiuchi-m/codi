@@ -140,11 +140,12 @@ header.header {
     div.grid-6 {
       float: right;
       text-align: right;
+      width: 600px;
       a.post {
         @extend .btn;
         width: 120px;
         border-radius: 15px;/*ボタンの角を丸く*/
-        display: inline-left;
+        display: inline;
         margin-left: 10px;
       }
     }
@@ -390,6 +391,8 @@ div.contents.row {
     }
   }
 }
+
+
 footer {
   @include boxBase;
   color: $gray;
