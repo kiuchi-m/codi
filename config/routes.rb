@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     get 'clothes' => 'clothes#index'#urlの最後に/clothesを入れるとclothe一覧に行きます
     get 'bottoms' => 'bottoms#index'#urlの最後に/bottomsを入れるとbottom一覧に行きます
     get 'tops' => 'tops#index'
+    get 'photoselects' => 'photoselects#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
