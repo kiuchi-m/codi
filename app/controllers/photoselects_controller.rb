@@ -1,0 +1,2 @@
+class PhotoselectsController < ApplicationController
+end
