@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     get 'bottoms' => 'bottoms#index'#urlの最後に/bottomsを入れるとbottom一覧に行きます
     get 'tops' => 'tops#index'
     get 'photoselects' => 'photoselects#index'
+    get 'tops/new'  =>  'tops#new'       #投稿画面
+    post  'tops'  =>  'tops#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
