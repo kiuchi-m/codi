@@ -42,9 +42,16 @@
     </header>
 
     <%= yield %>
-    
-    <a href="/photoselects"><div class="fixed_camera"></div></a>
-
+    <div class="camera">
+      <input type="checkbox" id="toggle-tab1"/>
+      <label for="toggle-tab1">
+        <div class="fixed_camera"></div>
+      </label>
+      <ul class="toggle-menu1">
+        <li><%= link_to 'トップスを登録', "/tops/new" %></li>
+        <li><%= link_to 'ボトムスを登録', "/bottoms/new" %></li>
+      </ul>
+    </div>
     <footer>
       <!--<p>-->
         <!--Copyright Codi 2019.-->

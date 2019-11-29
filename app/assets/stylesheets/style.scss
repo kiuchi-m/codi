@@ -402,15 +402,45 @@ footer {
 }
 
 /*カメラボタン常設*/
+
+
+input[type="checkbox"] {
+  display: none;
+}
+#toggle-tab1:checked ~ .toggle-menu1 > li,
+#toggle-tab2:checked ~ .toggle-menu2 > li {
+  display: block;
+}
 .fixed_camera
 {
   background-image: url("camera.jpg");
   background-size: cover;
-  position: fixed;
-  bottom: 10px; 
-  right: 10px;
   border-radius: 50%;
   width: 80px;
   height: 80px;
   background-position: center center;
+  box-shadow: 2px 2px 4px gray;
+}
+.toggle-menu1{
+  position: fixed;
+  bottom: 50px; 
+  right: 50px;
+  margin: 30px;
+}
+ul > li {
+  display: none;
+  border: 2px solid #333;
+  border-color: #666;
+  border-radius: 5px;
+  margin: 5px;
+  background-color: #fff;
+  color: #666;
+  width: 200px;
+  padding: 5px;
+  text-align: center;
+}
+label {
+  position: fixed;
+  bottom: 10px; 
+  right: 10px;
 }
