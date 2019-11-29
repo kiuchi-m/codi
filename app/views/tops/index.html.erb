@@ -2,6 +2,16 @@
   <div class="wrapper">
     <% @tops.each do |top| %>
       <div class="content_post" style="background-image: url(<%= top.image %>);">
+        <% if user_signed_in? && current_user.id == top.user_id %>
+          <div class="more">
+            <span><%= image_tag 'arrow_top.png' %></span>
+            <ul class="more_list">
+              <li>
+                <%= link_to '削除', "/tops/#{top.id}", method: :delete %>
+              </li>
+            </ul>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>

@@ -4,6 +4,13 @@ class BottomsController < ApplicationController
   def index
     @bottoms = current_user.bottoms
   end
+
+  def destroy
+    bottom = Bottom.find(params[:id])
+    if bottom.user_id == current_user.id
+      bottom.destroy
+    end
+  end
   
   private
     def move_to_login
