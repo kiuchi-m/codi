@@ -216,8 +216,6 @@ div.contents.row {
   div.wrapper{
     display: flex;/*画像横並びにする*/
     flex-wrap: wrap; /*折返し有り*/
-    margin-left: -150px;
-    margin-right: -150px;/*左右の空白が大きかったので　スマホだったら0がいいのかも*/
     }
   div.set{
     margin: 20px;
@@ -379,6 +377,10 @@ div.contents.row {
         background-color: lighten($accent, 10%);
       }
     }
+    .wide {
+      margin-left: -150px;
+      margin-right: 150px;
+    }
   }
   .success {
     @include boxBase(20px 0 ,30px);
@@ -403,44 +405,45 @@ footer {
 
 /*カメラボタン常設*/
 
-
-input[type="checkbox"] {
-  display: none;
-}
-#toggle-tab1:checked ~ .toggle-menu1 > li,
-#toggle-tab2:checked ~ .toggle-menu2 > li {
-  display: block;
-}
-.fixed_camera
-{
-  background-image: url("camera.jpg");
-  background-size: cover;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  background-position: center center;
-  box-shadow: 2px 2px 4px gray;
-}
-.toggle-menu1{
-  position: fixed;
-  bottom: 50px; 
-  right: 50px;
-  margin: 30px;
-}
-ul > li {
-  display: none;
-  border: 2px solid #333;
-  border-color: #666;
-  border-radius: 5px;
-  margin: 5px;
-  background-color: #fff;
-  color: #666;
-  width: 200px;
-  padding: 5px;
-  text-align: center;
-}
-label {
-  position: fixed;
-  bottom: 10px; 
-  right: 10px;
+.camera {
+  input[type="checkbox"] {
+    display: none;
+  }
+  #toggle-tab1:checked ~ .toggle-menu1 > li,
+  #toggle-tab2:checked ~ .toggle-menu2 > li {
+    display: block;
+  }
+  .fixed_camera
+  {
+    background-image: url("camera.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-position: center center;
+    box-shadow: 2px 2px 4px gray;
+  }
+  .toggle-menu1{
+    position: fixed;
+    bottom: 50px; 
+    right: 50px;
+    margin: 30px;
+  }
+  ul > li {
+    display: none;
+    border: 2px solid #333;
+    border-color: #666;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: #fff;
+    color: #666;
+    width: 200px;
+    padding: 5px;
+    text-align: center;
+  }
+  label {
+    position: fixed;
+    bottom: 10px; 
+    right: 10px;
+  }
 }
