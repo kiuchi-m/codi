@@ -26,7 +26,7 @@
         <h1 class="grid-6"><a href="/"><%= image_tag 'logo.png', :size => '60x40'%></a></h1>
         <% if user_signed_in? %>  
           <div class="user_nav grid-6">
-            <a class="post" href="/clothes">コーディネート</a>
+            <a class="post" href="/codinates">コーディネート</a>
             <a class="post" href="/tops">トップス</a>
             <a class="post" href="/bottoms">ボトムス</a>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
