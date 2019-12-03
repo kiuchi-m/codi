@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     get 'bottoms' => 'bottoms#index'#urlの最後に/bottomsを入れるとbottom一覧に行きます
     get 'tops' => 'tops#index'
     get 'photoselects' => 'photoselects#index'
+    delete  'bottoms/:id'  => 'bottoms#destroy'
+    delete  'tops/:id'  => 'tops#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
