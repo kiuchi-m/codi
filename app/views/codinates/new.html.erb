@@ -1,0 +1,25 @@
+<div class="contents row" >
+  <p>好きな組み合わせを選んでください</p>
+    <%= form_with(model: Codinate.new) do |form| %>
+      <div class="wrapper">
+        <% if @tops %>
+          <% @tops.each.with_index do |top, i| %>
+             <div class="set">
+              <div class="content" style="background-image: url(<%= top.image %>);"></div>
+              <div class="content" style="background-image: url(<%= @bottom.image %>);" /></div>
+              <div><%= check_box_tag 'codinate[codinates][]',[top.id,@bottom.id],false,id:"codinate_tops_#{i}"%></div>
+            </div>
+          <% end %>
+        <% else %>
+          <% @bottoms.each.with_index do |bottom, i| %>
+            <div class="set">
+              <div class="content" style="background-image: url(<%= @top.image %>);"></div>
+              <div class="content" style="background-image: url(<%= bottom.image %>);" /></div>
+              <div><%= check_box_tag 'codinate[codinates][]',[@top.id,bottom.id],false,id:"codinate_bottoms_#{i}"%></div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <%= form.submit "登録する" %>
+    <% end %>
+</div>
