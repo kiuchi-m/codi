@@ -1,9 +1,44 @@
 <div class="contents row">
-  <%= form_tag('/tops', method: :post) do %>
+  <% @top = Top.new %>
+  <%= form_with(model: @top, local: true) do |form| %>
     <h3>
       トップスを登録する
     </h3>
-    <input type="text" name="image" placeholder="Image Url">
+    <div id="img_field" onClick="$('#file').click()" >
+            <!--画像があるときは画像を表示する-->
+      <% if @top.image.present? %>
+        <%= image_tag(@top.image.url) %>
+      <% else %>
+        <i class="fas fa-image"></i><i class="fas fa-file-upload add"></i>
+      <% end %>
+    </div>
+        <!--id "file"をつけ、「display:none;」で隠す-->
+    <%= form.file_field :image, class: "image", id: "file", style: "display:none;"%>
     <input type="submit" value="SEND">
   <% end %>
 </div>
+<script type="text/javascript">
+  $(function(){
+  $fileField = $('#file')
+  
+  // 選択された画像を取得し表示
+  $($fileField).on('change', $fileField, function(e) {
+    file = e.target.files[0]
+    reader = new FileReader(),
+    $preview = $("#img_field");
+  
+    reader.onload = (function(file) {
+      return function(e) {
+        $preview.empty();
+        $preview.append($('<img>').attr({
+          src: e.target.result,
+          width: "80%",
+          class: "preview",
+          title: file.name
+        }));
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  });
+  });
+</script>

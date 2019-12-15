@@ -10,7 +10,7 @@ class TopsController < ApplicationController
   end
   
   def create
-    @top = Top.create(image: top_params[:image], user_id: current_user.id)
+    @top = Top.create(image: params[:top][:image], user_id: current_user.id)
     redirect_to "/tops/#{@top.id}/codinates/new"
   end
   
