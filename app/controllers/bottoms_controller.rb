@@ -17,8 +17,12 @@ class BottomsController < ApplicationController
   end
   
   def create
-    p @bottom = Bottom.create(image: params[:bottom][:image], user_id: current_user.id)
-    redirect_to "/bottoms/#{@bottom.id}/codinates/new"
+    if params[:bottom]
+      @bottom = Bottom.create(image: params[:bottom][:image], user_id: current_user.id)
+      redirect_to "/bottoms/#{@bottom.id}/codinates/new"
+    else
+      redirect_to action: 'new'
+    end
   end
   
   private
