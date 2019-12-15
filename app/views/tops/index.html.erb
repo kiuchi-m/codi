@@ -1,7 +1,7 @@
 <div class="contents row" >
   <div class="wrapper">
     <% @tops.each do |top| %>
-      <div class="content_post" style="background-image: url(<%= top.image %>);">
+      <div class="content_post" style="background-image: url(<%= top.image.to_s %>);">
         <% if user_signed_in? && current_user.id == top.user_id %>
           <div class="more">
             <span><%= image_tag 'arrow_top.png' %></span>
