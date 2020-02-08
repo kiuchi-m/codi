@@ -1,9 +1,9 @@
 <div class="contents row">
-  <%= form_tag('/tops', method: :post) do %>
+  <%= form_tag("/tops",{multipart: true}) do %>
     <h3>
       トップスを登録する
     </h3>
-    <input type="text" name="image" placeholder="Image Url">
+    <input type="file" name="image" placeholder="Image Url">
     <input type="submit" value="SEND">
   <% end %>
 </div>
