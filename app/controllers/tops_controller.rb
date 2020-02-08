@@ -11,10 +11,12 @@ class TopsController < ApplicationController
   
   def create
     @top = Top.create(image: top_params[:image], user_id: current_user.id)
+    @top.image = "#{@top.id}"
+    image = params[:image]
+    File.binwrite("public/tops/#{@top.user_id}_#{@top.image}", image.read)
+    @top.save
     redirect_to "/tops/#{@top.id}/codinates/new"
   end
-  
-
 
   def destroy
     top = Top.find(params[:id])

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     #root :to => 'コントローラ名#アクション名' rails sをしたときに最初に表示するページ
 
     root :to => 'codinates#index'#最初にclotes一覧を表示したいので'codinates#index'に設定しました
+    get "tops/new" => "tops#new"
+    post "tops/create" => "tops#create"
     resources :codinates
     resources :bottoms do
       resources :codinates
